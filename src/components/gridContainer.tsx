@@ -14,7 +14,6 @@ type GridContainerProps = {
     md?: GridBreakPoints
     lg?: GridBreakPoints
     xl?: GridBreakPoints
-    useDefault?: boolean
 }
 
 export function GridContainer({ 
@@ -25,21 +24,11 @@ export function GridContainer({
     sm,
     md,
     lg,
-    xl, 
-    useDefault = true, 
+    xl,
     ...props }: GridContainerProps & HTMLAttributes<HTMLDivElement>) {
     
-    if(!useDefault) {
-        return (
-            <div {...props}>
-                { children }
-            </div>
-        );
-    }
-
     let { className, ...internalProps } = props;
     let defaultClassName = "grid";
-    defaultClassName = appendClass(defaultClassName, useDefault ? `text-black bg-white` : "")
     if(rows) {
         defaultClassName = appendClass(defaultClassName, `grid-rows-${rows}`)
     }

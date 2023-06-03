@@ -9,7 +9,7 @@ type Items = {
 
 export default function PostCard({ post }: { post: Items }) {
     return (
-        <FlexContainer direction="col" className="p-6">
+        <FlexContainer direction="col">
             <Image
                 alt={`cover image for ${post.title}`}
                 src={post.coverImage}
