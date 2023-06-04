@@ -50,7 +50,7 @@ export function FlexContainer({
     }
 
     return (
-        <section className={`${(className || "")} ${defaultClassName}`}>
+        <section {...props} className={`${(className || "")} ${defaultClassName}`}>
             {children}
         </section>
     )
