@@ -30,8 +30,6 @@ export default function Home() {
             <main className="flex gap-y-6 flex-col">
                 <FlexContainer 
                     direction="col"
-                    gapY={72}
-                    gapX={72}
                     className="rounded-lg">
                     <h1 className="text-4xl mb-3">Curious about web development?</h1>
                     <p className="text-5xl font-black mb-3">I <span className="text-blue-500">GOT</span> you !</p>

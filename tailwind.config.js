@@ -15,4 +15,18 @@ module.exports = {
     },
   },
   plugins: [],
+  safelist: [
+    {
+      // Should match all grid cols or rows definition
+      pattern: /grid-(cols|rows)-.+/
+    },
+    {
+      // Should match all gap classes
+      pattern: /gap-.+/
+    },
+    {
+      // Should match classes for grid placement, like col-span-2 etc.
+      pattern: /(col|row)-.+/
+    }
+  ]
 }
