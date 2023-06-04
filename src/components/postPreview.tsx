@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FlexContainer } from "./flexContainer";
 
-type Items = {
+export type Items = {
     [key: string]: string;
 };
 

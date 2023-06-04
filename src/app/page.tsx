@@ -1,8 +1,7 @@
 import { getAllPosts, getPostBySlug } from "../lib/api";
 import PostCard from "../components/postPreview";
-import Link from "next/link";
+import { ImageCard } from "../components/ImageCard"
 import { FlexContainer } from "@/components/flexContainer";
-import { HTMLAttributes } from "react";
 import { GridContainer } from "@/components/gridContainer";
 
 export default function Home() {
@@ -43,7 +42,8 @@ export default function Home() {
 
                 <GridContainer cols={2} gap={4}>
                     <div>
-                        <PostCard post={heroPost} />
+                        <ImageCard post={heroPost} 
+                            className="w-1/2 sm:w-96 h-96" />
                     </div>
                     <div>
                         <div className="flex flex-col">
