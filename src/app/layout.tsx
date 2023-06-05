@@ -14,7 +14,7 @@ export default function RootLayout({
       */}
       <head />
 
-      <body className="bg-neutral-800 text-white">
+      <body className="bg-zinc-900 text-white">
         <Navbar />
         {children}
         <div id="page-bottom-spacer" className="h-16"></div>

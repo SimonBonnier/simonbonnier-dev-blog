@@ -2,7 +2,8 @@ import { getAllPosts, getPostBySlug } from "../lib/api";
 import PostCard from "../components/postPreview";
 import { ImageCard } from "../components/ImageCard"
 import { FlexContainer } from "@/components/flexContainer";
-import { GridContainer } from "@/components/gridContainer";
+import { GridContainer, GridItem } from "@/components/gridContainer";
+import { HeroPost } from "@/components/heroPost";
 
 export default function Home() {
     const posts = getAllPosts([
@@ -40,21 +41,19 @@ export default function Home() {
                     </p>
                 </FlexContainer>
 
-                <GridContainer cols={2} gap={4}>
-                    <div>
-                        <ImageCard post={heroPost} 
-                            className="w-1/2 sm:w-96 h-96" />
-                    </div>
-                    <div>
+                <GridContainer rows={2} cols={3} gap={4}>
+                    <GridItem colSpan={3} rowSpan={1}>
+                        <HeroPost post={heroPost} />
+                    </GridItem>
+                    <GridItem colSpan={1} rowSpan={1}>
                         <div className="flex flex-col">
                             {recentPosts.map((post) => (
                                 <div key={post.title}>
-                                    <PostCard post={post} />
+                                    <ImageCard post={post} />
                                 </div>
                             ))}
                         </div>
-                        
-                    </div>
+                    </GridItem>
                 </GridContainer>
             </main>
         </div>

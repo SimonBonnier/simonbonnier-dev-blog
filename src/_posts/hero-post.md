@@ -1,10 +1,10 @@
 ---
-title: "Hero Post"
-category: "REACT"
-excerpt: "Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat."
-coverImage: "/blog/hero.png"
-date: "2022-11-10T05:35:07.322Z"
-author: "Shy Guy"
+title: "A love letter to C++"
+category: "DEVELOPMENT"
+excerpt: "Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus."
+coverImage: "/blog/post1.jpg"
+date: "2022-11-14T05:35:07.322Z"
+author: "Mario"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.

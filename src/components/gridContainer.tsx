@@ -63,3 +63,34 @@ export function GridContainer({
     )
 }
 
+export function GridItem({
+    children,
+    colSpan,
+    rowSpan,
+    ...props
+}: {
+    colSpan?: number,
+    rowSpan?: number
+} & HTMLAttributes<HTMLElement>) {
+
+    let { className, ...internalProps } = props;
+    let defaultClassName = (className || "");    
+
+    if(colSpan) {
+        defaultClassName = appendClass(`col-span-${colSpan}`, defaultClassName);
+    }
+    if(rowSpan) {
+        defaultClassName = appendClass(`row-span-${rowSpan}`, defaultClassName);
+    }
+
+    function appendClass(defaultClassName: string, classToAdd: string): string {
+        defaultClassName += ` ${classToAdd}`;
+        return defaultClassName;
+    }
+
+    return (
+        <div className={defaultClassName}>
+            {children}
+        </div>
+    )
+}
