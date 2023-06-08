@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Items } from "../postPreview";
-import Link from "next/link";
 import DateFormatter from "../dateFormatter";
 import { LinkButton } from "../buttons/linkButton";
 import { Tag } from "../tag";
@@ -35,7 +34,7 @@ export function HeroPost({ post }: { post: Items }) {
                     <path d="M50 0H100L50 100H0L50 0Z" />
                 </svg>
                 <Image
-                    className={"object-cover w-full h-56 rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 lg:h-full" + ` ${styles["hero-image"]}`}
+                    className={"object-cover w-full h-56 rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 lg:h-full"}
                     src="/heroImage.jpg"
                     fill={true}
                     alt=""
