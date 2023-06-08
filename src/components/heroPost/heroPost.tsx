@@ -17,7 +17,7 @@ export function HeroPost({ post }: { post: Items }) {
                         {post.excerpt}
                     </p>
                     <p className="mb-5">
-                        {<DateFormatter dateString={post.date} />}
+                        { <DateFormatter className="text-zinc-300" dateString={post.date} /> }
                     </p>
                     <div className="flex items-center">
                         <LinkButton href="/" label="Read more" />
@@ -34,8 +34,8 @@ export function HeroPost({ post }: { post: Items }) {
                     <path d="M50 0H100L50 100H0L50 0Z" />
                 </svg>
                 <Image
-                    className={"object-cover w-full h-56 rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 lg:h-full"}
-                    src="/heroImage.jpg"
+                    className={"object-cover rounded-2xl rounded-bl-none"}
+                    src="/hero-image-2.jpg"
                     fill={true}
                     alt=""
                 />
