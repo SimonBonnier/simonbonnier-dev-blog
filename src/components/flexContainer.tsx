@@ -8,7 +8,7 @@ export function FlexContainer({
     gapY,
     ...props 
 }: {
-    children: JSX.Element | JSX.Element[],
+    children: JSX.Element | JSX.Element[] | string,
     direction?: "row" | "col",
     justifyContent?: JustifyContent,
     alignItems?: AlignItems,
@@ -31,7 +31,9 @@ export function FlexContainer({
     defaultClassName = gapY ? appendClass(`gap-y-${gapY}`, defaultClassName) : defaultClassName;
 
     function appendClass(defaultClassName: string, classToAdd: string): string {
-        defaultClassName += ` ${classToAdd}`;
+        if(classToAdd) {
+            defaultClassName += ` ${classToAdd}`;
+        }
         return defaultClassName;
     }    
 

@@ -57,7 +57,7 @@ export function GridContainer({
     }
 
     return (
-        <div className={defaultClassName + ` ${className}`} {...internalProps}>
+        <div className={defaultClassName} {...internalProps}>
             { children }
         </div>
     )

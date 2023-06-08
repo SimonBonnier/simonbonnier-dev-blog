@@ -27,6 +27,9 @@ module.exports = {
     {
       // Should match classes for grid placement, like col-span-2 etc.
       pattern: /(col|row)-.+/
+    },
+    {
+      pattern: /(justify|items)-.+/
     }
   ]
 }

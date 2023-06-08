@@ -1,11 +1,11 @@
 import { HTMLAttributes } from "react";
-import DateFormatter from "./dateFormatter";
-import { Items } from "./postPreview";
+import DateFormatter from "../dateFormatter";
+import { Items } from "../postPreview";
 import Link from "next/link";
-import { LinkButton } from "./buttons/linkButton";
-import { Tag } from "./tag";
+import { LinkButton } from "../buttons/linkButton";
+import { Tag } from "../tag";
 
-export function ImageCard({ 
+export function PostCard({ 
         post,
         height,
         width,
@@ -38,9 +38,12 @@ export function ImageCard({
             </div>
             <div className="flex justify-between items-center mx-4">
                 <LinkButton className="my-3" href="/" label="Read more" />
-                { <DateFormatter 
-                    className="text-zinc-300"
-                    dateString={post.date} /> }
+                { 
+                    <DateFormatter 
+                        className="text-zinc-300"
+                        dateString={post.date}
+                    /> 
+                }
             </div>
         </div>
     );
