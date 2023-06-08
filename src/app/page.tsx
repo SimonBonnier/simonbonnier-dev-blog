@@ -3,7 +3,7 @@ import PostCard from "../components/postPreview";
 import { ImageCard } from "../components/ImageCard"
 import { FlexContainer } from "@/components/flexContainer";
 import { GridContainer, GridItem } from "@/components/gridContainer";
-import { HeroPost } from "@/components/heroPost";
+import { HeroPost } from "@/components/heroPost/heroPost";
 
 export default function Home() {
     const posts = getAllPosts([
@@ -49,7 +49,11 @@ export default function Home() {
                         <div className="flex flex-col">
                             {recentPosts.map((post) => (
                                 <div key={post.title}>
-                                    <ImageCard post={post} />
+                                    <ImageCard 
+                                        className="shadow-[inset_0_0_80px_10px_rgba(0,0,0,0.3)]"
+                                        post={post} 
+                                        height={400} 
+                                        width={350} />
                                 </div>
                             ))}
                         </div>

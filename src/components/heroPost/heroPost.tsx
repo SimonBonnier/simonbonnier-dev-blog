@@ -1,16 +1,16 @@
 import Image from "next/image";
-import { Items } from "./postPreview";
+import { Items } from "../postPreview";
 import Link from "next/link";
-import DateFormatter from "./dateFormatter";
+import DateFormatter from "../dateFormatter";
+import { LinkButton } from "../buttons/linkButton";
+import { Tag } from "../tag";
 
 export function HeroPost({ post }: { post: Items }) {
     return (
         <div className="relative flex flex-col-reverse py-16 lg:pt-0 lg:flex-col lg:pb-0">
             <div className="relative flex flex-col items-start w-full max-w-xl lg:max-w-screen-xl bg-zinc-900">
                 <div className="mb-16 lg:my-40 lg:max-w-lg lg:pr-5">
-                    <p className="inline-block py-px mb-4 p-2 text-xs font-semibold tracking-wider bg-blue-600 text-white uppercase rounded-full bg-teal-accent-400">
-                        {post.category}
-                    </p>
+                    <Tag tag={post.category} /> 
                     <h2 className="mb-5 font-sans text-3xl font-bold tracking-tight text-white sm:text-5xl sm:leading-none">
                         {post.title}
                     </h2>
@@ -21,13 +21,7 @@ export function HeroPost({ post }: { post: Items }) {
                         {<DateFormatter dateString={post.date} />}
                     </p>
                     <div className="flex items-center">
-                        <Link
-                            href="/"
-                            aria-label=""
-                            className="inline-flex items-center font-semibold text-white transition-colors duration-200 hover:text-deep-purple-accent-700 p-2 border-2 border-blue-500 rounded-md"
-                        >
-                            Read more
-                        </Link>
+                        <LinkButton href="/" label="Read more" />
                     </div>
                 </div>
             </div>
@@ -41,7 +35,7 @@ export function HeroPost({ post }: { post: Items }) {
                     <path d="M50 0H100L50 100H0L50 0Z" />
                 </svg>
                 <Image
-                    className="object-cover w-full h-56 rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 lg:h-full"
+                    className={"object-cover w-full h-56 rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 lg:h-full" + ` ${styles["hero-image"]}`}
                     src="/heroImage.jpg"
                     fill={true}
                     alt=""

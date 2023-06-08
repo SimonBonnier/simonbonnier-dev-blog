@@ -1,12 +1,21 @@
 import { parseISO, format } from 'date-fns'
+import { splitClassesFromProps } from "@/logic/splitClassesFromProps";
 
-type Props = {
-  dateString: string
-}
-
-const DateFormatter = ({ dateString }: Props) => {
+const DateFormatter = ({ 
+  dateString,
+  ...props
+}: { 
+  dateString: string 
+} & React.TimeHTMLAttributes<HTMLTimeElement>) => {
+  let { classes, ...rest } = splitClassesFromProps(props);
+  classes
   const date = parseISO(dateString)
-  return <time className="text-white" dateTime={dateString}>{format(date, 'LLLL d, yyyy')}</time>
+  return <time 
+            className={classes.join(" ")} 
+            dateTime={dateString}
+            {...rest}>
+              {format(date, 'LLLL d, yyyy')}
+          </time>
 }
 
 export default DateFormatter
