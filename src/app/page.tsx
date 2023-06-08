@@ -1,5 +1,4 @@
 import { getAllPosts, getPostBySlug } from "../lib/api";
-import PostCard from "../components/postPreview";
 import { ImageCard } from "../components/ImageCard"
 import { FlexContainer } from "@/components/flexContainer";
 import { GridContainer, GridItem } from "@/components/gridContainer";

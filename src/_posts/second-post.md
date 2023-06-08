@@ -2,7 +2,7 @@
 title: "Should you be using Rust?"
 category: "RUST"
 excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-coverImage: "/blog/post2.png"
+coverImage: "/blog/post1.jpg"
 date: "2022-11-13T05:35:07.322Z"
 author: "Peach"
 ---

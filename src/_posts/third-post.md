@@ -2,7 +2,7 @@
 title: "How to write Javascript in your sleep."
 category: "JAVASCRIPT"
 excerpt: "Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies."
-coverImage: "/blog/post3.png"
+coverImage: "/blog/post1.jpg"
 date: "2022-11-12T05:35:07.322Z"
 author: "Bowser"
 ---
