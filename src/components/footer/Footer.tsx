@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FlexContainer } from "../flexContainer";
+import { IconLink } from "../links/iconLink";
 
 export function Footer() {
     return (
@@ -21,14 +22,19 @@ export function Footer() {
                     <FlexContainer direction="row" gapX={20}>
                         <FlexContainer direction="row" gap={28} className="mb-5">
                             <Link href={"/"}>Home</Link>
-                            <Link href={"/"}>Blog</Link>
+                            <FlexContainer direction="col" gap={2}>
+                                <Link href={"/"}>Blog</Link>
+                                <Link href={"/"}>Latest post</Link>
+                                <Link href={"/"}>Most recent</Link>
+                                <Link href={"/"}>Most popular</Link>
+                            </FlexContainer>
                             <Link href={"/"}>About</Link>
                         </FlexContainer>
                         <FlexContainer direction="col" gap={5} className="mb-5">
-                            <Link href={"/"}>Instagram</Link>
-                            <Link href={"/"}>GitHub</Link>
-                            <Link href={"/"}>Facebook</Link>
-                            <Link href={"/"}>Twitter</Link>
+                            <IconLink href={"/"}>Instagram</IconLink>
+                            <IconLink href={"/"}>GitHub</IconLink>
+                            <IconLink href={"/"}>Facebook</IconLink>
+                            <IconLink href={"/"}>Twitter</IconLink>
                         </FlexContainer>
                     </FlexContainer>
                 </FlexContainer>

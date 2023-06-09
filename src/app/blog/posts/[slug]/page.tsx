@@ -1,6 +1,6 @@
 import { getPostBySlug } from "../../../../lib/api";
 import markdownToHtml from "../../../../lib/markdownConverter";
-import markdownStyles from "./markdown-styles.module.css";
+import markdownStyles from "./markdownStyles.module.css";
 
 export default async function Post({ params }: { params: { slug: string } }) {
   const post = getPostBySlug(params.slug, ["title", "author", "content"]);
@@ -9,10 +9,10 @@ export default async function Post({ params }: { params: { slug: string } }) {
 
   return (
     <div className="container">
-      <main>
-        <div className="w-full h-16  text-white">
-          <p className="text-2xl">{post.title}</p>
-          <p className="text-gray-400">{post.author}</p>
+      <main className="mb-20">
+        <div className="w-full text-white">
+          <h1 className="text-4xl">{post.title}</h1>
+          <p className="text-2xl text-neutral-300">{post.author}</p>
           <div
             className={markdownStyles["markdown"]}
             dangerouslySetInnerHTML={{ __html: content }}

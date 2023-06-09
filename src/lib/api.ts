@@ -3,8 +3,8 @@
 import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
+import { Post } from "@/types/commonTypes";
 
-console.log('process.cwd()', process.cwd())
 const postsDirectory = join(process.cwd(), "src", "_posts");
 
 export function getPostSlugs() {
@@ -17,27 +17,23 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
-  type Items = {
-    [key: string]: string;
-  };
-
-  const items: Items = {};
+  const posts: Post = {};
 
   // Ensure only the minimal needed data is exposed
   fields.forEach((field) => {
     if (field === "slug") {
-      items[field] = realSlug;
+      posts[field] = realSlug;
     }
     if (field === "content") {
-      items[field] = content;
+      posts[field] = content;
     }
 
     if (typeof data[field] !== "undefined") {
-      items[field] = data[field];
+      posts[field] = data[field];
     }
   });
 
-  return items;
+  return posts;
 }
 
 export function getAllPosts(fields: string[] = []) {

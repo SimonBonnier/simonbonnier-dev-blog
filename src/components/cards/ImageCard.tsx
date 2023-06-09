@@ -1,10 +1,10 @@
 import { HTMLAttributes } from "react";
 import DateFormatter from "../dateFormatter";
-import { Items } from "../postPreview";
 import { LinkButton } from "../buttons/linkButton";
 import { Tag } from "../tag";
 import Image from "next/image";
 import { splitClassesFromProps } from "@/logic/splitClassesFromProps";
+import { Post } from "@/types/commonTypes";
 
 export function ImageCard({ 
         post,
@@ -12,7 +12,7 @@ export function ImageCard({
         width,
         ...props 
     }: { 
-        post: Items,
+        post: Post,
         height?: number,
         width?: number
     } & HTMLAttributes<HTMLDivElement>) {
@@ -45,7 +45,7 @@ export function ImageCard({
                 </p>
             </div>
             <div className="flex justify-between items-center mx-4">
-                <LinkButton className="my-3" href="/" label="Read more" />
+                <LinkButton className="my-3" href={`/blog/posts/${post.slug}`} label="Read more" />
                 { <DateFormatter 
                     className="text-zinc-300"
                     dateString={post.date} /> }

@@ -1,9 +1,8 @@
 import { HTMLAttributes } from "react";
 import DateFormatter from "../dateFormatter";
-import { Items } from "../postPreview";
-import Link from "next/link";
 import { LinkButton } from "../buttons/linkButton";
 import { Tag } from "../tag";
+import { Post } from "@/types/commonTypes";
 
 export function PostCard({ 
         post,
@@ -11,7 +10,7 @@ export function PostCard({
         width,
         ...props 
     }: { 
-        post: Items,
+        post: Post,
         height?: number,
         width?: number
     } & HTMLAttributes<HTMLDivElement>) {

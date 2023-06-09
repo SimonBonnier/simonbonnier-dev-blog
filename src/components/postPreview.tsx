@@ -2,12 +2,9 @@ import DateFormatter from "./dateFormatter";
 import Image from "next/image";
 import Link from "next/link";
 import { FlexContainer } from "./flexContainer";
+import { Post } from "@/types/commonTypes";
 
-export type Items = {
-    [key: string]: string;
-};
-
-export default function PostCard({ post }: { post: Items }) {
+export default function PostCard({ post }: { post: Post }) {
     return (
         <FlexContainer direction="col">
             <Image
