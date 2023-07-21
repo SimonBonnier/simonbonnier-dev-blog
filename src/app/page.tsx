@@ -14,14 +14,7 @@ export default function Home() {
         "slug",
     ]);
 
-    const heroPost = getPostBySlug("hero-post", [
-        "title",
-        "category",
-        "excerpt",
-        "slug",
-        "date",
-        "coverImage",
-      ]);
+    const heroPost = getPostBySlug("post1");
 
     return (
         <main className="flex gap-y-6 flex-col">

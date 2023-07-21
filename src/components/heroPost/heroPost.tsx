@@ -2,9 +2,9 @@ import Image from "next/image";
 import DateFormatter from "../dateFormatter";
 import { LinkButton } from "../buttons/linkButton";
 import { Tag } from "../tag";
-import { Post } from "@/types/commonTypes";
+import { BlogPost } from "@/types/commonTypes";
 
-export function HeroPost({ post }: { post: Post }) {
+export function HeroPost({ post }: { post: BlogPost }) {
     return (
         <div className="relative flex flex-col-reverse py-16 lg:pt-0 lg:flex-col lg:pb-0">
             <div className="relative flex flex-col items-start w-full max-w-xl lg:max-w-screen-xl bg-zinc-900">
@@ -14,7 +14,7 @@ export function HeroPost({ post }: { post: Post }) {
                         {post.title}
                     </h2>
                     <p className="pr-5 mb-5 text-base text-white md:text-xl">
-                        {post.excerpt}
+                        {post.summary}
                     </p>
                     <p className="mb-5">
                         { <DateFormatter className="text-zinc-300" dateString={post.date} /> }

@@ -2,7 +2,7 @@ import { HTMLAttributes } from "react";
 import DateFormatter from "../dateFormatter";
 import { LinkButton } from "../buttons/linkButton";
 import { Tag } from "../tag";
-import { Post } from "@/types/commonTypes";
+import { BlogPost } from "@/types/commonTypes";
 
 export function PostCard({ 
         post,
@@ -10,7 +10,7 @@ export function PostCard({
         width,
         ...props 
     }: { 
-        post: Post,
+        post: BlogPost,
         height?: number,
         width?: number
     } & HTMLAttributes<HTMLDivElement>) {
@@ -32,7 +32,7 @@ export function PostCard({
                     {post.title}
                 </h3>
                 <p className="text-md">
-                    {post.excerpt}
+                    {post.summary}
                 </p>
             </div>
             <div className="flex justify-between items-center mx-4">
