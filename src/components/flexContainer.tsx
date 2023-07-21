@@ -8,7 +8,7 @@ export function FlexContainer({
     gapY,
     ...props 
 }: {
-    children: JSX.Element | JSX.Element[] | string,
+    children: JSX.Element | (string | JSX.Element | undefined)[] | string,
     direction?: "row" | "col",
     justifyContent?: JustifyContent,
     alignItems?: AlignItems,
