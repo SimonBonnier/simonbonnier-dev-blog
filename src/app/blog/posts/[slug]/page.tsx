@@ -24,3 +24,12 @@ export default async function Post({ params }: { params: { slug: string } }) {
     </div>
   );
 }
+
+export async function generateStaticParams() {
+  const paths = posts.map(x => {
+    return {
+      slug: x.slug
+    }
+  });
+  return paths;
+}
