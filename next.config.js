@@ -5,7 +5,7 @@ const nextConfig = {
     },
     // output: "export", gives static export 
     output: "export",
-    basePath: '/simonbonnier-dev-blog',
+    basePath: '/',
     // setting unoptimized option to true makes images work in static build
     images: {
       unoptimized: true,
