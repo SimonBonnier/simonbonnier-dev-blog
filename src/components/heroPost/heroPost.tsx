@@ -35,7 +35,7 @@ export function HeroPost({ post }: { post: BlogPost }) {
                 </svg>
                 <Image
                     className={"object-cover rounded-2xl rounded-bl-none"}
-                    src="/hero-image-2.jpg"
+                    src={'/hero-image-2.jpg'}
                     fill={true}
                     alt=""
                 />
