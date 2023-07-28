@@ -17,12 +17,12 @@ export default function Navbar() {
               <NavLink href="/blog">Blog</NavLink>
             </li>
             <li>
-              <NavLink href="https://github.com/garrett-huggins/next13-blog-starter">
+              <NavLink href="https://github.com/SimonBonnier/">
                 Github
               </NavLink>
             </li>
           </ul>
-          <a href="www.github.com" className="text-xl font-bold">GitHub</a>
+          <Link className="text-xl font-bold" href={'https://github.com/SimonBonnier/'}>GitHub</Link>
         </nav>
       </div>
     );
