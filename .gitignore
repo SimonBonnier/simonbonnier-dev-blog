@@ -11,7 +11,7 @@
 # next.js
 /.next/
 # The `out` directory should not be ignored by version control -- TO MAKE IT WORK WITH STATIC PAGES
-# /out/
+/out/
 
 # production
 /build
