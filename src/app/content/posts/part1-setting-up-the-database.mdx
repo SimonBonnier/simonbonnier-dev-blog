@@ -1,0 +1,60 @@
+# Create the database
+
+Demo database:
+https://postgrespro.com/community/demodb
+
+Create Volume
+```bash
+docker volume create employee-case-study-db
+```
+
+Start container
+```bash
+docker run --name postgres-db -p 5432:5432 -v employee-case-study-db:/var/lib/postgresql/data -e POSTGRES_PASSWORD=pwd12345. -d postgres
+```
+
+copy bakup file to container
+```bash
+docker cp {path_to_file}\demo-small-en-20170815.sql postgres-db:/home/
+```
+
+Get shell inside container
+```bash
+docker exec -it postgres-db sh
+```
+
+Restore db from .sql file this will create a demo db
+```bash
+psql -U postgres -f /home/demo-small-en-20170815.sql
+```
+
+connect to postgres db
+```bash
+psql -U postgres
+// Connect to new db 
+\c demo 
+// List all tables
+\dt 
+```
+
+
+
+### Scafold db from postgres db
+First of all your C# project must have these two packages to be able to reverse enginer the database.
+
+Microsoft.EntityFrameworkCore.Design
+Npgsql.EntityFrameworkCore.PostgreSQL
+
+You also might need to install the dotnet-ef tools
+```bash
+dotnet tool install --global dotnet-ef
+```
+
+Then you run the following command to reverse enginer your db. When runnig the command it might fail from verious reasons. I've my self run into two problem. One problem might be that the connection string needs to be alter if you don't use WSL 2. The other problem might be that you do not have the latest version of dotnet sdk installed. 
+```bash
+dotnet-ef dbcontext scaffold "User ID=postgres;Password=pwd12345.;Server=localhost;Port=5432;Database=demo;" Npgsql.EntityFrameworkCore.PostgreSQL --project .\DemystifyEF\DemystifyEF.csproj
+```
+
+
+
+

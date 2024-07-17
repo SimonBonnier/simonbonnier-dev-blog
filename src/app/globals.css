@@ -4,6 +4,7 @@
 
 html {
   box-sizing: border-box;
+  line-height: 1.5;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -24,4 +25,10 @@ html {
 }
 
 body {
+}
+
+pre {
+  color: #000;
+  background: #f2f5fa;
+  padding: 1rem;
 }
