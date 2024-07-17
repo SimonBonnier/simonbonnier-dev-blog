@@ -10,7 +10,7 @@ export function HeroPost({ post }: { post: BlogPost }) {
             <div className="relative flex flex-col items-start w-full max-w-xl lg:max-w-screen-xl bg-zinc-900">
                 <div className="mb-16 lg:my-40 lg:max-w-lg lg:pr-5">
                     <Tag tag={post.category} /> 
-                    <h2 className="mb-5 font-sans text-3xl font-bold tracking-tight text-white sm:text-5xl sm:leading-none">
+                    <h2 className="mb-5 text-3xl font-bold tracking-tight text-white sm:text-5xl sm:leading-none">
                         {post.title}
                     </h2>
                     <p className="pr-5 mb-5 text-base text-white md:text-xl">
