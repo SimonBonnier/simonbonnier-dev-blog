@@ -6,6 +6,7 @@ html {
   box-sizing: border-box;
   line-height: 1.5;
   font-family: 'Ubuntu', sans-serif;
+  font-size: 10px;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -26,12 +27,17 @@ html {
 }
 
 body {
+  line-height: 2;
+  font-size: 2rem;
 }
 
 pre {
   color: #000;
   background: #f2f5fa;
   padding: 1rem;
+  font-family: 'Ubuntu', sans-serif;
+  text-wrap: wrap;
+  border-radius: .5rem;
 }
 
 .ubuntu-light {
