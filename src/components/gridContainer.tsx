@@ -36,6 +36,9 @@ export function GridContainer({
         defaultClassName = appendClass(defaultClassName, `grid-cols-${cols}`)
     }
     defaultClassName = appendBreakPointClasses(defaultClassName, "sm", sm)
+    defaultClassName = appendBreakPointClasses(defaultClassName, "md", md)
+    defaultClassName = appendBreakPointClasses(defaultClassName, "lg", lg)
+    defaultClassName = appendBreakPointClasses(defaultClassName, "xl", xl)
     defaultClassName = appendClass(defaultClassName, className || "")
     defaultClassName = appendClass(defaultClassName, gap ? `gap-${gap}` : "")
 
@@ -45,7 +48,7 @@ export function GridContainer({
     }
 
     function appendBreakPointClasses(defaultClassName: string, 
-                                     breakPoint: "sm" | "md" | "lg | xl", 
+                                     breakPoint: "sm" | "md" | "lg" | "xl", 
                                      breakPointValue: GridBreakPoints | undefined): string {
         if(breakPointValue?.cols) {
             defaultClassName = appendClass(defaultClassName, `${breakPoint}:grid-cols-${breakPointValue.cols}`)

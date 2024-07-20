@@ -6,6 +6,7 @@ export function FlexContainer({
     gap,
     gapX,
     gapY,
+    wrap,
     ...props 
 }: {
     children: JSX.Element | (string | JSX.Element | undefined)[] | string,
@@ -15,6 +16,7 @@ export function FlexContainer({
     gap?: number,
     gapX?: number,
     gapY?: number,
+    wrap?: boolean
 } & React.HTMLAttributes<HTMLDivElement>) {
 
     let { className } = props;
@@ -29,6 +31,7 @@ export function FlexContainer({
     defaultClassName = gap ? appendClass(`gap-${gap}`, defaultClassName) : defaultClassName;
     defaultClassName = gapX ? appendClass(`gap-x-${gapX}`, defaultClassName) : defaultClassName;
     defaultClassName = gapY ? appendClass(`gap-y-${gapY}`, defaultClassName) : defaultClassName;
+    defaultClassName = wrap ? appendClass('flex-wrap', defaultClassName) : defaultClassName;
 
     function appendClass(defaultClassName: string, classToAdd: string): string {
         if(classToAdd) {
