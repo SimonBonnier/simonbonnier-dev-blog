@@ -1,9 +1,33 @@
-# Linq to SQL - What is really generated and when is it fetched?
+## Getting started
 
+### Set up the database
+If you want to follow along and create the examples by your self this post will use the flight data demo database on [Flight data demo db (postgrespro.com)](https://postgrespro.com/community/demodb).
+For a quick set up you can follow the post [Fast Track to Coding](https://simonbonnier.com/blog/setting-up-a-development-database-using-docker) where 
+you will setup a docker container using postgres. This example also use the flight data db example so if you follow that you should be able to quickly scafold your db.
+
+### Create a project
+In this demo I simple use a .Net Console application, but you can use whatever project type you prefer. When you have created the project you first of all your need your C# project to have these two packages to be able to reverse enginer the database.
+
+```bash
+Microsoft.EntityFrameworkCore.Design 
+Npgsql.EntityFrameworkCore.PostgreSQL
+```
+
+You also might need to install the dotnet-ef tools if you haven't already done that.
+```bash
+dotnet tool install --global dotnet-ef
+```
+
+### Scafold db from postgres db
+
+Then you run the following command to reverse enginer your db. When runnig the command it might fail from verious reasons. I've my self run into two problem. One problem might be that the connection string needs to be alter if you don't use WSL 2. The other problem might be that you do not have the latest version of dotnet sdk installed. 
+```bash
+dotnet-ef dbcontext scaffold "User ID=postgres;Password=pwd12345.;Server=localhost;Port=5432;Database=demo;" Npgsql.EntityFrameworkCore.PostgreSQL --project .\DemystifyEF\DemystifyEF.csproj
+```
 
 ## When?
 Do you know what really triggers a call to the database when using entity framework (EF)?
-When working with EF you get in contact with ```c#DBSet<T>``` and ```c#IQueryable<T>``` both of these abstractions are used to hide the complexity of creating SQL Queries from C# Linq statements. There are a couple of Linq methods that will trigger a call to the database. The most common are ToList, First, FirstOrDefault, Single, SingleOrDefault, All, Any, Count, Min, Max, Find and the async versions of these methods. 
+When working with EF you get in contact with ```DBSet<T>``` and ```c#IQueryable<T>``` both of these abstractions are used to hide the complexity of creating SQL Queries from C# Linq statements. There are a couple of Linq methods that will trigger a call to the database. The most common are ToList, First, FirstOrDefault, Single, SingleOrDefault, All, Any, Count, Min, Max, Find and the async versions of these methods. 
 
 
 ## What is generated?
@@ -11,7 +35,7 @@ If you have some basic knowledge of SQL you probably already have a good underst
 
 
 ### First or FirstOrDefault
-First will return the first element in the ```c# DBSet<T>``` or the First element in the ```c# DBSet<T>``` matching the sent in labda expression. If no element are found the method will throw an exception. If you don't want the method to throw an exception if the element is not found you can instead use FirstOrDefault. This method will instead return NULL if no matching element is found. Giving you the opertunity to handle the NULL value however you want. 
+First will return the first element in the ```DBSet<T>``` or the First element in the ```DBSet<T>``` matching the sent in labda expression. If no element are found the method will throw an exception. If you don't want the method to throw an exception if the element is not found you can instead use FirstOrDefault. This method will instead return NULL if no matching element is found. Giving you the opertunity to handle the NULL value however you want. 
 
 ```c#
 using (var db = new DemoContext())
@@ -36,7 +60,7 @@ SELECT b.book_ref, b.book_date, b.total_amount
 
 
 ### Single or SingleOrDefault
-Single will return the one element in the ```c# DBSet<T>``` that match the sent in lambda expression. The big difference between this and First is that this method will throw an exception if more than one element match the sent in expression. You can also see a slight difference in the generated SQL where this method in order to be able to say that only one entity match the expression needs too try fetch two elements from the database. This method are because of that slightly less performant than First. 
+Single will return the one element in the ```DBSet<T>``` that match the sent in lambda expression. The big difference between this and First is that this method will throw an exception if more than one element match the sent in expression. You can also see a slight difference in the generated SQL where this method in order to be able to say that only one entity match the expression needs too try fetch two elements from the database. This method are because of that slightly less performant than First. 
 
 Same as with First and FirstOrDefault, Single will throw an exception if no element are found and SingleOrDefault will return NULL if no element are found. 
 
@@ -442,19 +466,4 @@ SELECT b.book_date, b.total_amount, b.book_ref, t1.ticket_no
       ORDER BY b.book_ref
 ```
 
-In this article we have had a quick overview of some basic DB querying using Entity framework core and Postgresql. We have went through all the basic Linq expressions and also learned what SQL they are generating. Knowing this will be an important skill for understanding how to write performant applications, solve performance bottle necks and maybe the most important thing. Knowing the limitations of entity framework. 
-
-
-
-
-
-
-
-
-
-```c#
-
-```
-```sql
-
-```
+In this article we have had a quick overview of some basic DB querying using Entity framework core and Postgresql. We have went through all the basic Linq expressions and also learned what SQL they are generating. Knowing this will be an important skill for understanding how to write performant applications, solve performance bottle necks and maybe the most important thing. Knowing the limitations of entity framework.
