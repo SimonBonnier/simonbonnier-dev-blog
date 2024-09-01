@@ -14,7 +14,7 @@ export default function Home() {
         "slug",
     ]);
 
-    const heroPost = getPostBySlug("EFTutorialPart1");
+    const heroPost = getPostBySlug("setting-up-a-development-database-using-docker");
 
     return (
         <main className="flex gap-y-6 flex-col">

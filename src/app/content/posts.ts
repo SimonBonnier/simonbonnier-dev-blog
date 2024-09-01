@@ -1,6 +1,7 @@
 import { BlogPost } from '@/types/commonTypes';
 import EF_Post1 from '../content/posts/part1-setting-up-the-database.mdx';
 import EF_Post2 from '../content/posts/part2-basic-querying.mdx';
+import { AuthorType } from '@/types/author';
 
 export const posts: BlogPost[] = [
     {
@@ -22,3 +23,15 @@ export const posts: BlogPost[] = [
         content: EF_Post2
     }
 ]
+
+export const authors: AuthorType[] = [
+    {
+        name: "Simon Bonnier",
+        position: "Senior fullstack developer",
+        description: "I'm  a senior fullstack software developer, with a primary focus on backend development using C# and .NET. ",
+        image: "",
+        github: "https://github.com/SimonBonnier",
+        linkedin: "https://www.linkedin.com/in/simon-bonnier-3ab3a2175/",
+        x: ""
+    }
+];
