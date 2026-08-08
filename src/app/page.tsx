@@ -97,7 +97,7 @@ export default function Home() {
 
             <div className="relative z-10 w-full max-w-2xl rounded-3xl border border-white/20 bg-zinc-900/65 p-8 text-center shadow-[0_30px_80px_rgba(0,0,0,0.5)] backdrop-blur-md sm:p-10">
                 <p className="mb-2 text-xs font-semibold tracking-[0.22em] text-cyan-200/90">HEMLIG UTMANING</p>
-                <h1 className="text-4xl font-black leading-tight text-white mb-3 sm:text-5xl">Hemligt födelsedagskryss</h1>
+                <h1 className="text-4xl font-black leading-tight text-white mb-3 sm:text-5xl">Hemligt kryss</h1>
                 <p className="text-zinc-300 mb-8 text-lg">Lös krysset för att låsa upp sidan.</p>
 
                 <form className="flex flex-col gap-4" onSubmit={onSubmit}>
@@ -141,7 +141,7 @@ export default function Home() {
 
                     <div className="mt-2 grid gap-2 text-sm sm:grid-cols-2">
                         <p className="rounded-xl border border-white/10 bg-zinc-800/70 px-3 py-2 text-zinc-100 text-center">
-                            <span className="font-semibold text-cyan-200">Vågrät ledtråd:</span> Födelsedagstjejen
+                            <span className="font-semibold text-cyan-200">Vågrät ledtråd:</span> Födelsedagstjej
                         </p>
                         <p className="rounded-xl border border-white/10 bg-zinc-800/70 px-3 py-2 text-zinc-100 text-center">
                             <span className="font-semibold text-cyan-200">Lodrät ledtråd:</span> 31 på engelska (bokstäver)
