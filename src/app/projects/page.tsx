@@ -41,8 +41,12 @@ export default function ProjectsPage() {
                     <br />
                     Hanna!
                 </h1>
-                <p className="mx-auto mt-6 max-w-2xl text-lg text-amber-50/90 sm:text-2xl">
-                    Hoppas du får en fantastisk födelsedag med både skratt, kärlek och enorma mängder godis.
+                <p className="mx-auto mt-6 max-w-3xl text-lg text-amber-50/90 sm:text-2xl">
+                    Hoppas du får en lika fantastisk födelsedag som du är fantastisk person.
+                </p>
+
+                <p className="mx-auto mt-6 max-w-3xl text-lg text-amber-50/90 sm:text-2xl">
+                    Fylld av kärlek, skratt, snack och godis! 
                 </p>
 
                 <div className="mt-12 flex justify-center" aria-hidden="true">
