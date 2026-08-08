@@ -1,62 +1,48 @@
-import { getAllPosts, getPostBySlug } from "../lib/api";
-import { PostCard } from "../components/cards/PostCard";
-import { FlexContainer } from "@/components/flexContainer";
-import { GridContainer, GridItem } from "@/components/gridContainer";
-import { HeroPost } from "@/components/heroPost/heroPost";
+"use client";
+
+import { FormEvent, useState } from "react";
+import { useRouter } from "next/navigation";
+
+const ACCESS_PASSWORD = "Hanna31";
 
 export default function Home() {
-    const posts = getAllPosts([
-        "title",
-        "category",
-        "date",
-        "excerpt",
-        "coverImage",
-        "slug",
-    ]);
+    const router = useRouter();
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
 
-    const heroPost = getPostBySlug("EFTutorialPart1");
+    const onSubmit = (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+
+        if (password === ACCESS_PASSWORD) {
+            setError("");
+            router.push("/projects");
+            return;
+        }
+
+        setError("Wrong password. Please try again.");
+    };
 
     return (
-        <main className="flex gap-y-6 flex-col">
-            <FlexContainer direction="col" className="rounded-lg my-3">
-                <h1 className="text-4xl mb-3">
-                    Curious about web development?
-                </h1>
-                <p className="text-5xl font-black mb-3">
-                    I <span className="text-blue-500">GOT</span> you !
-                </p>
-                <p className="text-2xl leading-10 text-neutral-300">
-                    Get tips about web development in{" "}
-                    <span className="font-bold">C#</span>,{" "}
-                    <span className="font-bold">React</span> and{" "}
-                    <span className="font-bold">TypeScript</span>.
-                    <br />
-                    With focus on code{" "}
-                    <span className="font-bold">quality</span>,{" "}
-                    <span className="font-bold">performance</span> and{" "}
-                    <span className="font-bold">automation</span>.
-                </p>
-            </FlexContainer>
-
-            <GridContainer cols={1} lg={{ cols: "3" }} gap={4}>
-                <GridItem colSpan={3} rowSpan={1} >
-                    <HeroPost post={heroPost} />
-                </GridItem>
-                <GridItem colSpan={3} rowSpan={1} className="my-8">
-                    <div className="flex flex-row flex-wrap">
-                        {posts.slice(0, 3).map((post) => (
-                            <div key={post.title}>
-                                <PostCard
-                                    className="shadow-[inset_0_0_80px_10px_rgba(0,0,0,0.3)]"
-                                    post={post}
-                                    height={400}
-                                    width={350}
-                                />
-                            </div>
-                        ))}
-                    </div>
-                </GridItem>
-            </GridContainer>
+        <main className="min-h-[70vh] flex items-center justify-center">
+            <div className="w-full max-w-md rounded-xl border border-zinc-700 bg-zinc-800/40 p-8">
+                <h1 className="text-3xl font-bold mb-2">Enter super secret password</h1>
+                <form className="flex flex-col gap-4" onSubmit={onSubmit}>
+                    <input
+                        type="password"
+                        value={password}
+                        onChange={(event) => setPassword(event.target.value)}
+                        placeholder="Password"
+                        className="rounded-md border border-zinc-600 bg-zinc-900 px-3 py-2 outline-none focus:border-zinc-300"
+                    />
+                    <button
+                        type="submit"
+                        className="rounded-md bg-white text-zinc-900 px-4 py-2 font-semibold hover:bg-zinc-200"
+                    >
+                        Enter
+                    </button>
+                    {error && <p className="text-red-400">{error}</p>}
+                </form>
+            </div>
         </main>
     );
 }

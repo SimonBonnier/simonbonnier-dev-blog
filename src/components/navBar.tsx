@@ -13,7 +13,7 @@ export default function Navbar() {
                         <NavLink href="/">Home</NavLink>
                     </li>
                     <li>
-                        <NavLink href="/blog">Blog</NavLink>
+                        <NavLink href="/projects">Projects</NavLink>
                     </li>
                     <li>
                         <NavLink href="https://github.com/SimonBonnier/">
@@ -21,12 +21,7 @@ export default function Navbar() {
                         </NavLink>
                     </li>
                 </ul>
-                <Link
-                    className="text-xl font-bold"
-                    href={"https://github.com/SimonBonnier/"}
-                >
-                    GitHub
-                </Link>
+                <div className="w-16" />
             </nav>
         </div>
     );

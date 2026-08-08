@@ -23,12 +23,7 @@ export function Footer() {
                     <FlexContainer direction="row" wrap gapX={20}>
                         <FlexContainer direction="row" wrap gap={28} className="mb-5">
                             <Link href={"/"}>Home</Link>
-                            <FlexContainer direction="col" gap={2}>
-                                <Link href={"/"}>Blog</Link>
-                                <Link href={"/"}>Latest post</Link>
-                                <Link href={"/"}>Most recent</Link>
-                                <Link href={"/"}>Most popular</Link>
-                            </FlexContainer>
+                            <Link href="/projects">Projects</Link>
                             <Link href={"/"}>About</Link>
                         </FlexContainer>
                         <FlexContainer direction="col" gap={5} className="mb-5">

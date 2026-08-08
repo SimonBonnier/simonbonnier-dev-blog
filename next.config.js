@@ -1,15 +1,11 @@
-  /** @type {import('next').NextConfig} */
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-    experimental: {
-      mdxRs: true,
-    },
-    // output: "export", gives static export 
-    output: "export",
-    // setting unoptimized option to true makes images work in static build
-    images: {
-      unoptimized: true,
-    },
-  }
-   
-  const withMDX = require('@next/mdx')()
-  module.exports = withMDX(nextConfig)
+  // output: "export", gives static export
+  output: "export",
+  // setting unoptimized option to true makes images work in static build
+  images: {
+    unoptimized: true,
+  },
+};
+
+module.exports = nextConfig;

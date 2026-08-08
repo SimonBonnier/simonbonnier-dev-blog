@@ -1,6 +1,4 @@
 import "./globals.css";
-import Navbar from "../components/navBar";
-import { Footer } from "@/components/footer/Footer";
 
 export default function RootLayout({
     children,
@@ -26,9 +24,7 @@ export default function RootLayout({
                 />
             </head>
             <body className="bg-zinc-900 text-white">
-                <Navbar />
-                <div className="container mx-auto px-5 w-full md:w-4/5">{children}</div>
-                <Footer />
+                {children}
             </body>
         </html>
     );
