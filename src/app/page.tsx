@@ -144,7 +144,7 @@ export default function Home() {
                             <span className="font-semibold text-cyan-200">Vågrät ledtråd:</span> Födelsedagstjej
                         </p>
                         <p className="rounded-xl border border-white/10 bg-zinc-800/70 px-3 py-2 text-zinc-100 text-center">
-                            <span className="font-semibold text-cyan-200">Lodrät ledtråd:</span> 31 på engelska (bokstäver)
+                            <span className="font-semibold text-cyan-200">Lodrät ledtråd:</span> Max antal dagar i en månad för britter
                         </p>
                     </div>
 
